@@ -1,0 +1,19 @@
+pipeline {
+    agent {
+        'any'
+        }
+    stages {
+        stage{
+            ('git_game_of_life')
+            }
+
+        {
+            steps
+            {
+                git url: 'https://github.com/kishorebittu3003/game-of-life.git',
+                  branch: 'jgp'
+            }
+
+        }
+    }
+}
