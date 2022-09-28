@@ -1,19 +1,22 @@
 pipeline {
-    agent {
-        'any'
-        }
-    stages {
-        stage{
-            ('git_game_of_life')
-            }
-
-        {
+    agent any
+    stages
+    {
+        stage ('git clone game of life') 
+                steps
+                {
+                git url: 'https://github.com/kishorebittu3003/game-of-life.git',
+                  branch: 'game'}
+                }
+       { stage ('mvn package')
+            {
             steps
             {
-                git url: 'https://github.com/kishorebittu3003/game-of-life.git',
-                  branch: 'jgp'
+                script{
+                    sh 'mvn package'
+                      }
             }
-
+            }
         }
-    }
-}
+        }
+        
